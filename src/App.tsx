@@ -32,7 +32,7 @@ function Li({ img }: { img: string }) {
     <>
       <li
         ref={ref}
-        onClick={(e) => {
+        onClick={() => {
           ref.current?.classList.add("big");
           setIsOpen(true);
         }}
@@ -64,10 +64,13 @@ function Li({ img }: { img: string }) {
 
 export default function App() {
   return (
+  <>
     <div className="App">
       <ul>
       {[img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12].map((e, i) => <Li img={e} key={i} />)}
       </ul>
     </div>
+      <p style={{fontFamily: 'monospace', position: 'fixed', bottom: '10px', left: '10px', fontSize: '24px'}}>Life with you is amazing.</p>
+      </>
   );
 }
