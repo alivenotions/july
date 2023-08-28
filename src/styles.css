@@ -1,0 +1,66 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+}
+
+ul {
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+li {
+  width: 25px;
+  height: 100px;
+  display: inline-block;
+  padding: 5px;
+  transition-property: background-color width height;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+  flex: none;
+}
+.big {
+  width: 300px;
+  height: 300px;
+}
+li:first-of-type {
+  border-radius: 5px 0 0 5px;
+}
+li:last-of-type {
+  border-radius: 0 5px 5px 0;
+}
+li:not(.big):hover {
+  background-color: hotpink;
+  width: 50px;
+  height: 200px;
+}
+
+li:hover + li {
+  width: 37px;
+  height: 150px;
+}
+li:has(+ li:hover) {
+  width: 37px;
+  height: 150px;
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
