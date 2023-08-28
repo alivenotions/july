@@ -10,8 +10,6 @@ function Li({ className }: { className: string }) {
         className={className}
         ref={ref}
         onClick={(e) => {
-          e.preventDefault();
-          console.log("hi");
           ref.current?.classList.add("big");
           setIsOpen(true);
         }}
@@ -24,12 +22,10 @@ function Li({ className }: { className: string }) {
             fontSize: "16px",
             right: "4px",
             background: "transparent",
-            border: "none"
+            border: "none",
           }}
           onClick={(e) => {
-            e.preventDefault();
             e.stopPropagation();
-            console.log("hi");
 
             ref.current?.classList.remove("big");
             setIsOpen(false);
