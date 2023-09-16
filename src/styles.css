@@ -53,7 +53,8 @@ ul:not(.open) li:not(.big):hover {
   height: var(--height-hover);
 }
 
-ul:not(.open) li:hover + li, ul:not(.open) li:has(+ li:hover)  {
+ul:not(.open) li:hover + li,
+ul:not(.open) li:has(+ li:hover) {
   width: var(--width-side);
   height: var(--height-side);
 }
