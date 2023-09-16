@@ -37,7 +37,6 @@ function Li({ img, parent }: { img: string, parent: any }) {
     }
   })
   return (
-    <>
       <li
         ref={ref}
         onClick={() => {
@@ -45,30 +44,8 @@ function Li({ img, parent }: { img: string, parent: any }) {
           parent.current?.classList.add("open");
           setIsOpen(true);
         }}
-        style={{ position: "relative", backgroundImage: `url("${img}")`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-      >
-        <button
-          style={{
-            display: isOpen ? "inline" : "none",
-            position: "absolute",
-            fontSize: "16px",
-            right: "4px",
-            color: 'hotpink',
-            background: "transparent",
-            border: "none",
-          }}
-          onClick={(e) => {
-            e.stopPropagation();
-
-            ref.current?.classList.remove("big");
-          parent.current?.classList.remove("open");
-            setIsOpen(false);
-          }}
-        >
-          close
-        </button>
-      </li>
-    </>
+        style={{ position: "relative", backgroundImage: `url("${img}")`, backgroundPosition: 'center' }}
+      />
   );
 }
 
@@ -81,7 +58,7 @@ export default function App() {
       {[img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12].map((e, i) => <Li img={e} key={i} parent={ref}/>)}
       </ul>
     </div>
-      <p style={{fontFamily: 'monospace', position: 'fixed', bottom: '10px', left: '10px', fontSize: '24px'}}>Life with you is amazing.</p>
+      <p style={{fontFamily: 'monospace', position: 'fixed', bottom: '10px', left: '10px', fontSize: '24px'}}>Life with you is <span style={{color: '#D64933', textDecoration: 'underline'}}>amazing</span>.</p>
       </>
   );
 }

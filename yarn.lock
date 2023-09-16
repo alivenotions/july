@@ -7409,6 +7409,11 @@ react-app-polyfill@^3.0.0:
     regenerator-runtime "^0.13.9"
     whatwg-fetch "^3.6.2"
 
+react-aspect-ratio@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/react-aspect-ratio/-/react-aspect-ratio-1.1.6.tgz#d949800ca1428194f98034b945f804ce3f4b3ec6"
+  integrity sha512-A7/x2MqpYelh2fxx6RnRSEcA+rwdfiDK74Ju78xW8EnzSGSopPnCugyKlB+2d6dNP1UzU/SscIslVtqzNZrwyQ==
+
 react-dev-utils@^12.0.1:
   version "12.0.1"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-12.0.1.tgz#ba92edb4a1f379bd46ccd6bcd4e7bc398df33e73"
