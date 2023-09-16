@@ -6,14 +6,14 @@
   align-items: center;
   height: 100vh;
   justify-content: center;
-  --width-norm: 50px;
-  --height-norm: 300px;
-  --width-hover: 100px;
-  --height-hover: 500px;
-  --width-side: 75px;
-  --height-side: 400px;
-  --width-big: 900px;
-  --height-big: 900px;
+  --width-norm: min(50px, calc(80% / 12));
+  --height-norm: min(300px, 35vh);
+  --width-hover: min(100px, calc(90% / 12));
+  --height-hover: min(500px, 50vh);
+  --width-side: min(75px, calc(85% / 12));
+  --height-side: min(400px, 42vh);
+  --width-big: min(900px, 80%);
+  --height-big: min(900px, 80vh);
 }
 p {
   margin: 50px;
@@ -21,6 +21,8 @@ p {
 
 ul {
   overflow: auto;
+  width: 100%;
+  margin: 0 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,6 +37,7 @@ li {
   transition-duration: 0.2s;
   transition-timing-function: ease-out;
   flex: none;
+  background-size: cover;
 }
 .big {
   width: var(--width-big);
@@ -57,14 +60,6 @@ ul:not(.open) li:hover + li,
 ul:not(.open) li:has(+ li:hover) {
   width: var(--width-side);
   height: var(--height-side);
-}
-
-ul.open li {
-  background-size: cover;
-}
-
-ul:not(.open) li {
-  background-size: cover;
 }
 
 .green {

@@ -45,7 +45,6 @@ function Li({ img, parent }: { img: string; parent: any }) {
         setIsOpen(true);
       }}
       style={{
-        position: "relative",
         backgroundImage: `url("${img}")`,
         backgroundPosition: "center",
       }}
