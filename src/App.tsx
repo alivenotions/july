@@ -24,16 +24,25 @@ import img10 from './compressed/10.jpg'
 import img11 from './compressed/11.jpg'
 // @ts-ignore
 import img12 from './compressed/12.jpg'
+import { useClickOutside } from '@react-hooks-library/core'
 
-function Li({ img }: { img: string }) {
+function Li({ img, parent }: { img: string, parent: any }) {
   let ref = useRef<HTMLLIElement>(null);
   let [isOpen, setIsOpen] = useState(false);
+  useClickOutside(ref, () => {
+    if(isOpen) {
+      ref.current?.classList.remove("big");
+          parent.current?.classList.remove("open");
+      setIsOpen(false)
+    }
+  })
   return (
     <>
       <li
         ref={ref}
         onClick={() => {
           ref.current?.classList.add("big");
+          parent.current?.classList.add("open");
           setIsOpen(true);
         }}
         style={{ position: "relative", backgroundImage: `url("${img}")`, backgroundSize: 'cover', backgroundPosition: 'center' }}
@@ -52,6 +61,7 @@ function Li({ img }: { img: string }) {
             e.stopPropagation();
 
             ref.current?.classList.remove("big");
+          parent.current?.classList.remove("open");
             setIsOpen(false);
           }}
         >
@@ -63,11 +73,12 @@ function Li({ img }: { img: string }) {
 }
 
 export default function App() {
+    let ref = useRef<HTMLUListElement>(null)
   return (
   <>
     <div className="App">
-      <ul>
-      {[img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12].map((e, i) => <Li img={e} key={i} />)}
+      <ul ref={ref}>
+      {[img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12].map((e, i) => <Li img={e} key={i} parent={ref}/>)}
       </ul>
     </div>
       <p style={{fontFamily: 'monospace', position: 'fixed', bottom: '10px', left: '10px', fontSize: '24px'}}>Life with you is amazing.</p>

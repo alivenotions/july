@@ -48,13 +48,13 @@ li:first-of-type {
 li:last-of-type {
   border-radius: 0 5px 5px 0;
 }
-li:not(.big):hover {
+ul:not(.open) li:not(.big):hover {
   background-color: hotpink;
   width: var(--width-hover);
   height: var(--height-hover);
 }
 
-li:hover + li, li:has(+ li:hover)  {
+ul:not(.open) li:hover + li, ul:not(.open) li:has(+ li:hover)  {
   width: var(--width-side);
   height: var(--height-side);
 }
