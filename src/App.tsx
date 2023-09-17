@@ -46,7 +46,7 @@ function Li({ img, parent }: { img: string; parent: any }) {
       }}
       style={{
         backgroundImage: `url("${img}")`,
-        backgroundPosition: "center",
+        backgroundPosition: "top",
       }}
     />
   );
